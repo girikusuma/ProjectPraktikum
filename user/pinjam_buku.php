@@ -11,7 +11,7 @@
 
 		$connection->query("INSERT INTO tb_pinjam (id_user, id_buku, tanggal_pinjam, tanggal_kembali) VALUES('".$user."', '".$buku."', '".$pinjam."', '".$kembali."')");
 
-		$connection->query("UPDATE tb_buku SET stok=stok-1");
+		$connection->query("UPDATE tb_buku SET stok=stok-1 WHERE id_buku=".$buku);
 
 	}
 	header("location:galeri.php");
